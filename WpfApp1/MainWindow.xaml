@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WPF Application" Height="350" Width="525"
+        Background="MediumTurquoise"
+        >
+    <Grid>
+        <TextBox Name="TextBoxClientSend" HorizontalAlignment="Left" Height="57" Margin="24,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.576,0.089"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Height="32" Margin="165,130,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
+        <TextBox Name="TextBoxServerResponse"  HorizontalAlignment="Left" Height="53" Margin="300,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" TextChanged="TextBoxServerResponse_TextChanged" FontFamily="Times New Roman"></TextBox>
+        <Label Content="Você diz:" HorizontalAlignment="Left" Height="35" Margin="24,10,0,0" VerticalAlignment="Top" Width="83" FontStyle="Italic"/>
+        <Label Content="Servidor diz:" HorizontalAlignment="Left" Height="34" Margin="300,164,0,0" VerticalAlignment="Top" Width="83" FontStyle="Italic" RenderTransformOrigin="0.405,1.294"/>
+        <TextBox Name="TextBoxSentToServer" HorizontalAlignment="Left" Height="57" Margin="300,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Menssagens Enviadas" HorizontalAlignment="Left" Height="35" Margin="300,10,0,0" VerticalAlignment="Top" Width="136"/>
+
+    </Grid>
+</Window>
