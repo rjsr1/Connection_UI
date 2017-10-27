@@ -8,13 +8,13 @@
         Title="WPF Application" Height="350" Width="525"
         Background="MediumTurquoise"
         >
-    <Grid>
+    <Grid Margin="0,0,0.4,5.4">
         <TextBox Name="TextBoxClientSend" HorizontalAlignment="Left" Height="57" Margin="24,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.576,0.089"/>
         <Button Content="Enviar" HorizontalAlignment="Left" Height="32" Margin="165,130,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
-        <TextBox Name="TextBoxServerResponse"  HorizontalAlignment="Left" Height="53" Margin="300,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" TextChanged="TextBoxServerResponse_TextChanged" FontFamily="Times New Roman"></TextBox>
+        <TextBox Name="TextBoxServerResponse"  HorizontalAlignment="Left" Height="109" Margin="300,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" TextChanged="TextBoxServerResponse_TextChanged" FontFamily="Times New Roman"></TextBox>
         <Label Content="Você diz:" HorizontalAlignment="Left" Height="35" Margin="24,10,0,0" VerticalAlignment="Top" Width="83" FontStyle="Italic"/>
         <Label Content="Servidor diz:" HorizontalAlignment="Left" Height="34" Margin="300,164,0,0" VerticalAlignment="Top" Width="83" FontStyle="Italic" RenderTransformOrigin="0.405,1.294"/>
-        <TextBox Name="TextBoxSentToServer" HorizontalAlignment="Left" Height="57" Margin="300,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <TextBox Name="TextBoxSentToServer" HorizontalAlignment="Left" Height="109" Margin="300,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <Label Content="Menssagens Enviadas" HorizontalAlignment="Left" Height="35" Margin="300,10,0,0" VerticalAlignment="Top" Width="136"/>
 
     </Grid>
