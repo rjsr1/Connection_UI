@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,12 +28,15 @@ namespace WpfApp1
             InitializeComponent();
             client = new Client(2004, "127.0.0.1");
             client.StartClient();
-            client.Receive(client.GetSocket());
+            ThreadStart threadStart = new ThreadStart(ReceiveDataServer);
+            Thread thread = new Thread(threadStart);
+            thread.Start();
+            //criaria aqui uma thread que ouviria o servidor enquanto o socket connected==true.E atualiza o textBox do server
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,21 +45,23 @@ namespace WpfApp1
             TextBoxClientSend.Clear();
             client.Send(s);
             client.EndMessage();
-            TextBoxSentToServer.AppendText("você disse: "+s+"\n");          
-            
-        }
-       
-        private void TextBoxServerResponse_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
+            TextBoxSentToServer.AppendText("você disse: " + s + "\n");
+
         }
 
+        private void TextBoxServerResponse_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
 
         private void ReceiveDataServer()
         {
-            //posso criar outra thread???? para mudar o texto do server???
-            client.Receive(client.GetSocket());
-            TextBoxServerResponse.AppendText(client.GetSocketReceiveResponse());
+            //fazer melhor.......
+            while (client.GetSocket().Connected)
+            {
+                TextBoxServerResponse.AppendText(client.GetSocketReceiveResponse());
+            }
         }
     }
+    
 }
