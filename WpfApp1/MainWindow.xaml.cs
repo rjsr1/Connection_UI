@@ -25,14 +25,19 @@ namespace WpfApp1
 
         void HandleReceiveEvent(object sender, Receive_Args e)
         {
-            TextBoxServerResponse.AppendText(e.Message+"\n");
+            
+            this.Dispatcher.BeginInvoke(new Action( () => TextBoxServerResponse.AppendText("Servidor diz:"+e.Message + "\n"))) ;
+            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
+        public void UpdateServerResponse(string message)
+        {
+            TextBoxServerResponse.AppendText(message + "\n");
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String s = TextBoxClientSend.Text;
